@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>acrhboy</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000EE" vlink="#551A8B" alink="#FF0000">
+
+<center>
+<h1>acrhboy</h1>
+<h3>Post-Install Manager</h3>
+</center>
+
+<hr>
+
+<table border="0" cellpadding="10" cellspacing="10" width="100%">
+<tr>
+
+<td width="20%" valign="top" align="center">
+<table border="1" cellpadding="15" cellspacing="0" width="100%" bgcolor="#EEEEEE">
+<tr>
+<td align="center">
+<a href="javascript:toggle('mas')"><b>MAS activation links</b></a>
+</td>
+</tr>
+</table>
+</td>
+
+<td width="20%" valign="top" align="center">
+<table border="1" cellpadding="15" cellspacing="0" width="100%" bgcolor="#EEEEEE">
+<tr>
+<td align="center">
+<a href="javascript:toggle('defender')"><b>Defender Remover (zip)</b></a>
+</td>
+</tr>
+</table>
+</td>
+
+<td width="20%" valign="top" align="center">
+<table border="1" cellpadding="15" cellspacing="0" width="100%" bgcolor="#EEEEEE">
+<tr>
+<td align="center">
+<a href="javascript:toggle('reg')"><b>Registry (.reg) - disable updates + managed by org</b></a>
+</td>
+</tr>
+</table>
+</td>
+
+<td width="20%" valign="top" align="center">
+<table border="1" cellpadding="15" cellspacing="0" width="100%" bgcolor="#EEEEEE">
+<tr>
+<td align="center">
+<a href="javascript:toggle('brave')"><b>Brave browser - auto install</b></a>
+</td>
+</tr>
+</table>
+</td>
+
+<td width="20%" valign="top" align="center">
+<table border="1" cellpadding="15" cellspacing="0" width="100%" bgcolor="#EEEEEE">
+<tr>
+<td align="center">
+<a href="javascript:toggle('services')"><b>Services to disable - custom</b></a>
+</td>
+</tr>
+</table>
+</td>
+
+</tr>
+</table>
+
+<hr>
+
+<div id="mas" style="display:none;">
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left"><h2>MAS activation links</h2></td>
+<td align="right" valign="top"><button onclick="toggle('mas')">close</button></td>
+</tr>
+</table>
+
+<table border="1" cellpadding="5" cellspacing="0" width="100%">
+<tr bgcolor="#DDDDDD">
+<th width="30%">Method / tool</th>
+<th width="45%">Command / link</th>
+<th width="25%">Notes</th>
+</tr>
+<tr>
+<td>Microsoft Activation Scripts (MAS)</td>
+<td><tt>irm https://massgrave.dev/get | iex</tt></td>
+<td>PowerShell (admin). online KMS / HWID / Ohook.</td>
+</tr>
+<tr>
+<td>MAS - alternative mirror</td>
+<td><tt>irm https://git.activated.win | iex</tt></td>
+<td>mirror if main is blocked</td>
+</tr>
+<tr>
+<td>MAS - github direct</td>
+<td><tt>https://github.com/massgravel/Microsoft-Activation-Scripts</tt></td>
+<td>manual download / inspect</td>
+</tr>
+<tr>
+<td>KMS (manual) - slmgr</td>
+<td><tt>slmgr /ipk &lt;kms-client-key&gt;</tt><br>
+<tt>slmgr /skms kms.example.com</tt><br>
+<tt>slmgr /ato</tt></td>
+<td>generic volume license</td>
+</tr>
+<tr>
+<td>HWID (digital license)</td>
+<td><tt>irm https://massgrave.dev/get | iex</tt> then option [1]</td>
+<td>permanent, no KMS</td>
+</tr>
+</table>
+
+<p><b>note:</b> always run as administrator. some AV may flag MAS - allow if you trust source.</p>
+
+<hr>
+</div>
+
+<div id="defender" style="display:none;">
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left"><h2>Defender Remover (zip)</h2></td>
+<td align="right" valign="top"><button onclick="toggle('defender')">close</button></td>
+</tr>
+</table>
+
+<table border="1" cellpadding="5" cellspacing="0" width="100%">
+<tr bgcolor="#DDDDDD">
+<th width="30%">Item</th>
+<th width="50%">Details</th>
+<th width="20%">Action</th>
+</tr>
+<tr>
+<td>Defender Remover v12.8 (latest)</td>
+<td><tt>DefenderRemover.zip</tt> - ~2.5 MB<br>
+sha256: <tt>d7f3a9... (example)</tt></td>
+<td>extract & run <tt>.exe</tt></td>
+</tr>
+<tr>
+<td>GitHub release</td>
+<td><a href="https://github.com/ionuttbara/windows-defender-remover/releases">https://github.com/ionuttbara/windows-defender-remover/releases</a></td>
+<td>download ZIP</td>
+</tr>
+<tr>
+<td>Direct (example mirror)</td>
+<td><tt>https://github.com/ionuttbara/windows-defender-remover/releases/latest/download/DefenderRemover.zip</tt></td>
+<td>direct link</td>
+</tr>
+<tr>
+<td>Usage</td>
+<td>run as admin, choose <b>Y</b> to disable defender + mitigations. reboot required.</td>
+<td>irreversible without restore</td>
+</tr>
+</table>
+
+<p><b>note:</b> always verify hash. the tool disables Defender, SmartScreen, and related services.</p>
+
+<hr>
+</div>
+
+<div id="reg" style="display:none;">
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left"><h2>Registry (.reg) - aggressive disable updates + managed by org</h2></td>
+<td align="right" valign="top"><button onclick="toggle('reg')">close</button></td>
+</tr>
+</table>
+
+<p>click the button below to generate and download the ready-made registry file. content is hidden.</p>
+
+<table border="1" cellpadding="5" cellspacing="0" width="100%">
+<tr bgcolor="#DDDDDD">
+<th width="25%">File name</th>
+<th width="50%">Download</th>
+<th width="25%">Effect</th>
+</tr>
+
+<tr>
+<td><tt>acrhboy.reg</tt></td>
+<td>
+<button onclick="generateReg()">Download acrhboy.reg</button>
+</td>
+<td>aggressively disables windows update, blocks servers, shows managed by org banner</td>
+</tr>
+</table>
+
+<p><b>warning:</b> this is aggressive. it disables the windows update service. to restore, you must manually re-enable services and delete the policy keys.</p>
+
+<hr>
+</div>
+
+<div id="brave" style="display:none;">
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left"><h2>Brave browser - auto install</h2></td>
+<td align="right" valign="top"><button onclick="toggle('brave')">close</button></td>
+</tr>
+</table>
+
+<p>run the command below in PowerShell (as administrator). it downloads the Brave setup to your temp folder and runs it.</p>
+
+<table border="1" cellpadding="5" cellspacing="0" width="100%">
+<tr bgcolor="#DDDDDD">
+<th width="25%">Item</th>
+<th width="50%">Command / link</th>
+<th width="25%">Notes</th>
+</tr>
+
+<tr>
+<td>Brave - download + run (simple)</td>
+<td><tt>irm https://laptop-updates.brave.com/latest/winx64/BraveBrowserSetup.exe -OutFile $env:TEMP\brave.exe; &amp; $env:TEMP\brave.exe</tt></td>
+<td>downloads to %TEMP% and runs it</td>
+</tr>
+
+<tr>
+<td>Brave - one-liner (tighter)</td>
+<td><tt>iwr https://laptop-updates.brave.com/latest/winx64/BraveBrowserSetup.exe -OutFile $env:TEMP\b.exe; &amp; $env:TEMP\b.exe</tt></td>
+<td>aliases: iwr, &amp;</td>
+</tr>
+
+<tr>
+<td>Brave - official direct</td>
+<td><tt>https://laptop-updates.brave.com/latest/winx64/BraveBrowserSetup.exe</tt></td>
+<td>direct .exe download</td>
+</tr>
+
+</table>
+
+<p><b>note:</b> the command uses <tt>$env:TEMP</tt> to store the installer temporarily, then runs it directly with <tt>&amp;</tt>. no extra arguments. run PowerShell as administrator.</p>
+
+<hr>
+</div>
+
+<div id="services" style="display:none;">
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left"><h2>Services to disable - custom selection</h2></td>
+<td align="right" valign="top"><button onclick="toggle('services')">close</button></td>
+</tr>
+</table>
+
+<p>tick the services you want to disable, then click download. only selected services will be included in the .reg file.</p>
+
+<p>
+<button onclick="selectAll(true)">select all</button>
+<button onclick="selectAll(false)">clear all</button>
+<button onclick="generateServicesReg()">Download acrhboy-services.reg</button>
+</p>
+
+<table border="1" cellpadding="5" cellspacing="0" width="100%">
+<tr bgcolor="#DDDDDD">
+<th width="5%">on</th>
+<th width="30%">Service name</th>
+<th width="40%">Display name</th>
+<th width="25%">Risk / note</th>
+</tr>
+
+<tr><td><input type="checkbox" class="svc" value="AJRouter"></td><td>AJRouter</td><td>AllJoyn Router</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="ALG"></td><td>ALG</td><td>Application Layer Gateway</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="AppIDSvc"></td><td>AppIDSvc</td><td>Application Identity</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="AppReadiness"></td><td>AppReadiness</td><td>App Readiness</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="AppXSvc"></td><td>AppXSvc</td><td>AppX Deployment</td><td>breaks store apps</td></tr>
+<tr><td><input type="checkbox" class="svc" value="AssignedAccessManagerSvc"></td><td>AssignedAccessManagerSvc</td><td>Assigned Access Manager</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="AxInstSV"></td><td>AxInstSV</td><td>ActiveX Installer</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="BDESVC"></td><td>BDESVC</td><td>BitLocker Drive Encryption</td><td>breaks bitlocker</td></tr>
+<tr><td><input type="checkbox" class="svc" value="BthAvctpSvc"></td><td>BthAvctpSvc</td><td>AVCTP service</td><td>breaks bluetooth audio</td></tr>
+<tr><td><input type="checkbox" class="svc" value="bthserv"></td><td>bthserv</td><td>Bluetooth Support</td><td>breaks bluetooth</td></tr>
+<tr><td><input type="checkbox" class="svc" value="BluetoothUserService"></td><td>BluetoothUserService</td><td>Bluetooth User Support</td><td>breaks bluetooth</td></tr>
+<tr><td><input type="checkbox" class="svc" value="Browser"></td><td>Browser</td><td>Computer Browser</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="CDPSvc"></td><td>CDPSvc</td><td>Connected Devices Platform</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="CDPUserSvc"></td><td>CDPUserSvc</td><td>Connected Devices Platform User</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="CertPropSvc"></td><td>CertPropSvc</td><td>Certificate Propagation</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="ClipSVC"></td><td>ClipSVC</td><td>Client License Service</td><td>breaks store</td></tr>
+<tr><td><input type="checkbox" class="svc" value="COMSysApp"></td><td>COMSysApp</td><td>COM+ System Application</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="cphs"></td><td>cphs</td><td>Intel Content Protection</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="DcpSvc"></td><td>DcpSvc</td><td>Data Collection Publishing</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="defragsvc"></td><td>defragsvc</td><td>Optimize drives</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="DeviceAssociationService"></td><td>DeviceAssociationService</td><td>Device Association</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="DeviceInstall"></td><td>DeviceInstall</td><td>Device Install</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="DevQueryBroker"></td><td>DevQueryBroker</td><td>DevQuery Background Discovery</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="diagnosticshub.standardcollector.service"></td><td>diagnosticshub.standardcollector.service</td><td>Diagnostics Hub</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="DiagTrack"></td><td>DiagTrack</td><td>Connected User Experiences and Telemetry</td><td>recommended</td></tr>
+<tr><td><input type="checkbox" class="svc" value="dmwappushservice"></td><td>dmwappushservice</td><td>Device Management WAP Push</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="dot3svc"></td><td>dot3svc</td><td>Wired AutoConfig</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="DPS"></td><td>DPS</td><td>Diagnostic Policy Service</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="DsmSvc"></td><td>DsmSvc</td><td>Device Setup Manager</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="DusmSvc"></td><td>DusmSvc</td><td>Data Usage</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="EapHost"></td><td>EapHost</td><td>Extensible Authentication Protocol</td><td>may break 802.1x</td></tr>
+<tr><td><input type="checkbox" class="svc" value="EFS"></td><td>EFS</td><td>Encrypting File System</td><td>breaks EFS</td></tr>
+<tr><td><input type="checkbox" class="svc" value="EntAppSvc"></td><td>EntAppSvc</td><td>Enterprise App Management</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="Fax"></td><td>Fax</td><td>Fax</td><td>breaks fax</td></tr>
+<tr><td><input type="checkbox" class="svc" value="fdPHost"></td><td>fdPHost</td><td>Function Discovery Provider Host</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="FDResPub"></td><td>FDResPub</td><td>Function Discovery Resource Publication</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="fhsvc"></td><td>fhsvc</td><td>File History</td><td>breaks file history</td></tr>
+<tr><td><input type="checkbox" class="svc" value="FrameServer"></td><td>FrameServer</td><td>Windows Camera Frame Server</td><td>breaks camera</td></tr>
+<tr><td><input type="checkbox" class="svc" value="FrameServerMonitor"></td><td>FrameServerMonitor</td><td>Windows Camera Frame Server Monitor</td><td>breaks camera</td></tr>
+<tr><td><input type="checkbox" class="svc" value="GraphicsPerfSvc"></td><td>GraphicsPerfSvc</td><td>Graphics Performance</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="hidserv"></td><td>hidserv</td><td>Human Interface Device Access</td><td>may break media keys</td></tr>
+<tr><td><input type="checkbox" class="svc" value="HvHost"></td><td>HvHost</td><td>HV Host</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="icssvc"></td><td>icssvc</td><td>Windows Mobile Hotspot</td><td>breaks hotspot</td></tr>
+<tr><td><input type="checkbox" class="svc" value="IKEEXT"></td><td>IKEEXT</td><td>IKE and AuthIP IPsec Keying Modules</td><td>may break VPN</td></tr>
+<tr><td><input type="checkbox" class="svc" value="InstallService"></td><td>InstallService</td><td>Microsoft Store Install</td><td>breaks store installs</td></tr>
+<tr><td><input type="checkbox" class="svc" value="iphlpsvc"></td><td>iphlpsvc</td><td>IP Helper</td><td>may break IPv6</td></tr>
+<tr><td><input type="checkbox" class="svc" value="IpxlatCfgSvc"></td><td>IpxlatCfgSvc</td><td>IP Translation Configuration</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="KtmRm"></td><td>KtmRm</td><td>KtmRm for Distributed Transaction</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="LanmanServer"></td><td>LanmanServer</td><td>Server</td><td>breaks file sharing</td></tr>
+<tr><td><input type="checkbox" class="svc" value="lfsvc"></td><td>lfsvc</td><td>Geolocation</td><td>breaks location</td></tr>
+<tr><td><input type="checkbox" class="svc" value="LicenseManager"></td><td>LicenseManager</td><td>Windows License Manager</td><td>may break store</td></tr>
+<tr><td><input type="checkbox" class="svc" value="lltdsvc"></td><td>lltdsvc</td><td>Link-Layer Topology Discovery Mapper</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="lmhosts"></td><td>lmhosts</td><td>TCP/IP NetBIOS Helper</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="LxpSvc"></td><td>LxpSvc</td><td>Language Experience</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="MapsBroker"></td><td>MapsBroker</td><td>Downloaded Maps Manager</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="MSDTC"></td><td>MSDTC</td><td>Distributed Transaction Coordinator</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="MSiSCSI"></td><td>MSiSCSI</td><td>Microsoft iSCSI Initiator</td><td>breaks iSCSI</td></tr>
+<tr><td><input type="checkbox" class="svc" value="NaturalAuthentication"></td><td>NaturalAuthentication</td><td>Natural Authentication</td><td>breaks windows hello</td></tr>
+<tr><td><input type="checkbox" class="svc" value="NcaSvc"></td><td>NcaSvc</td><td>Network Connectivity Assistant</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="NcbService"></td><td>NcbService</td><td>Network Connection Broker</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="Netlogon"></td><td>Netlogon</td><td>Netlogon</td><td>breaks domain</td></tr>
+<tr><td><input type="checkbox" class="svc" value="PeerDistSvc"></td><td>PeerDistSvc</td><td>BranchCache</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="perceptionsimulation"></td><td>perceptionsimulation</td><td>Windows Perception Simulation</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="PhoneSvc"></td><td>PhoneSvc</td><td>Phone Service</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="PimIndexMaintenanceSvc"></td><td>PimIndexMaintenanceSvc</td><td>Contact Data</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="pla"></td><td>pla</td><td>Performance Logs &amp; Alerts</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="PNRPsvc"></td><td>PNRPsvc</td><td>Peer Name Resolution Protocol</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="PolicyAgent"></td><td>PolicyAgent</td><td>IPsec Policy Agent</td><td>may break VPN</td></tr>
+<tr><td><input type="checkbox" class="svc" value="PrintNotify"></td><td>PrintNotify</td><td>Printer Extensions and Notifications</td><td>breaks printing</td></tr>
+<tr><td><input type="checkbox" class="svc" value="PrintSpooler"></td><td>PrintSpooler</td><td>Print Spooler</td><td>breaks printing</td></tr>
+<tr><td><input type="checkbox" class="svc" value="PrintWorkflowUserSvc"></td><td>PrintWorkflowUserSvc</td><td>Print Workflow</td><td>breaks printing</td></tr>
+<tr><td><input type="checkbox" class="svc" value="PushToInstall"></td><td>PushToInstall</td><td>Windows Push To Install</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="QWAVE"></td><td>QWAVE</td><td>Quality Windows Audio Video Experience</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="RmSvc"></td><td>RmSvc</td><td>Radio Management</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="RpcLocator"></td><td>RpcLocator</td><td>Remote Procedure Call Locator</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="RetailDemo"></td><td>RetailDemo</td><td>Retail Demo</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="RemoteAccess"></td><td>RemoteAccess</td><td>Routing and Remote Access</td><td>breaks RRAS</td></tr>
+<tr><td><input type="checkbox" class="svc" value="RemoteRegistry"></td><td>RemoteRegistry</td><td>Remote Registry</td><td>recommended</td></tr>
+<tr><td><input type="checkbox" class="svc" value="SCardSvr"></td><td>SCardSvr</td><td>Smart Card</td><td>breaks smart card</td></tr>
+<tr><td><input type="checkbox" class="svc" value="ScDeviceEnum"></td><td>ScDeviceEnum</td><td>Smart Card Device Enumeration</td><td>breaks smart card</td></tr>
+<tr><td><input type="checkbox" class="svc" value="SCPolicySvc"></td><td>SCPolicySvc</td><td>Smart Card Removal Policy</td><td>breaks smart card</td></tr>
+<tr><td><input type="checkbox" class="svc" value="SDRSVC"></td><td>SDRSVC</td><td>Windows Backup</td><td>breaks backup</td></tr>
+<tr><td><input type="checkbox" class="svc" value="seclogon"></td><td>seclogon</td><td>Secondary Logon</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="SEMgrSvc"></td><td>SEMgrSvc</td><td>Payments and NFC/SE Manager</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="SENS"></td><td>SENS</td><td>System Event Notification</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="SensorDataService"></td><td>SensorDataService</td><td>Sensor Data</td><td>breaks sensors</td></tr>
+<tr><td><input type="checkbox" class="svc" value="SensorService"></td><td>SensorService</td><td>Sensor</td><td>breaks sensors</td></tr>
+<tr><td><input type="checkbox" class="svc" value="SensrSvc"></td><td>SensrSvc</td><td>Sensor Monitoring</td><td>breaks sensors</td></tr>
+<tr><td><input type="checkbox" class="svc" value="SessionEnv"></td><td>SessionEnv</td><td>Remote Desktop Configuration</td><td>breaks RDP</td></tr>
+<tr><td><input type="checkbox" class="svc" value="SharedAccess"></td><td>SharedAccess</td><td>Internet Connection Sharing</td><td>breaks ICS</td></tr>
+<tr><td><input type="checkbox" class="svc" value="SharedRealitySvc"></td><td>SharedRealitySvc</td><td>Spatial Data</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="ShellHWDetection"></td><td>ShellHWDetection</td><td>Shell Hardware Detection</td><td>may affect autoplay</td></tr>
+<tr><td><input type="checkbox" class="svc" value="shpamsvc"></td><td>shpamsvc</td><td>Shared PC Account Manager</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="smphost"></td><td>smphost</td><td>Microsoft Storage Spaces SMP</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="SmsRouter"></td><td>SmsRouter</td><td>Microsoft Windows SMS Router</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="SNMP"></td><td>SNMP</td><td>SNMP</td><td>breaks SNMP</td></tr>
+<tr><td><input type="checkbox" class="svc" value="SNMPTRAP"></td><td>SNMPTRAP</td><td>SNMP Trap</td><td>breaks SNMP</td></tr>
+<tr><td><input type="checkbox" class="svc" value="spectrum"></td><td>spectrum</td><td>Windows Perception</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="sppsvc"></td><td>sppsvc</td><td>Software Protection</td><td>may affect activation</td></tr>
+<tr><td><input type="checkbox" class="svc" value="SSDPSRV"></td><td>SSDPSRV</td><td>SSDP Discovery</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="ssh-agent"></td><td>ssh-agent</td><td>OpenSSH Authentication</td><td>breaks OpenSSH</td></tr>
+<tr><td><input type="checkbox" class="svc" value="SstpSvc"></td><td>SstpSvc</td><td>Secure Socket Tunneling Protocol</td><td>breaks SSTP VPN</td></tr>
+<tr><td><input type="checkbox" class="svc" value="SysMain"></td><td>SysMain</td><td>SysMain (Superfetch)</td><td>recommended</td></tr>
+<tr><td><input type="checkbox" class="svc" value="TabletInputService"></td><td>TabletInputService</td><td>Touch Keyboard and Handwriting</td><td>breaks touch keyboard</td></tr>
+<tr><td><input type="checkbox" class="svc" value="TapiSrv"></td><td>TapiSrv</td><td>Telephony</td><td>breaks telephony</td></tr>
+<tr><td><input type="checkbox" class="svc" value="TermService"></td><td>TermService</td><td>Remote Desktop Services</td><td>breaks RDP</td></tr>
+<tr><td><input type="checkbox" class="svc" value="TrkWks"></td><td>TrkWks</td><td>Distributed Link Tracking Client</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="TroubleshootingSvc"></td><td>TroubleshootingSvc</td><td>Recommended Troubleshooting</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="tzautoupdate"></td><td>tzautoupdate</td><td>Auto Time Zone Updater</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="UevAgentService"></td><td>UevAgentService</td><td>User Experience Virtualization</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="UmRdpService"></td><td>UmRdpService</td><td>Remote Desktop Services UserMode</td><td>breaks RDP</td></tr>
+<tr><td><input type="checkbox" class="svc" value="upnphost"></td><td>upnphost</td><td>UPnP Device Host</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="UsoSvc"></td><td>UsoSvc</td><td>Update Orchestrator</td><td>recommended</td></tr>
+<tr><td><input type="checkbox" class="svc" value="vds"></td><td>vds</td><td>Virtual Disk</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="vmicguestinterface"></td><td>vmicguestinterface</td><td>Hyper-V Guest Interface</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="vmicheartbeat"></td><td>vmicheartbeat</td><td>Hyper-V Heartbeat</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="vmickvpexchange"></td><td>vmickvpexchange</td><td>Hyper-V Data Exchange</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="vmicrdv"></td><td>vmicrdv</td><td>Hyper-V Remote Desktop Virtualization</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="vmicshutdown"></td><td>vmicshutdown</td><td>Hyper-V Guest Shutdown</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="vmictimesync"></td><td>vmictimesync</td><td>Hyper-V Time Synchronization</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="vmicvmsession"></td><td>vmicvmsession</td><td>Hyper-V PowerShell Direct</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="vmicvss"></td><td>vmicvss</td><td>Hyper-V Volume Shadow Copy</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="VSS"></td><td>VSS</td><td>Volume Shadow Copy</td><td>breaks restore points</td></tr>
+<tr><td><input type="checkbox" class="svc" value="W32Time"></td><td>W32Time</td><td>Windows Time</td><td>may affect time sync</td></tr>
+<tr><td><input type="checkbox" class="svc" value="WaaSMedicSvc"></td><td>WaaSMedicSvc</td><td>Windows Update Medic</td><td>recommended</td></tr>
+<tr><td><input type="checkbox" class="svc" value="WalletService"></td><td>WalletService</td><td>WalletService</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="WarpJITSvc"></td><td>WarpJITSvc</td><td>WarpJITSvc</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="wbengine"></td><td>wbengine</td><td>Block Level Backup Engine</td><td>breaks backup</td></tr>
+<tr><td><input type="checkbox" class="svc" value="WbioSrvc"></td><td>WbioSrvc</td><td>Windows Biometric</td><td>breaks biometrics</td></tr>
+<tr><td><input type="checkbox" class="svc" value="wcncsvc"></td><td>wcncsvc</td><td>Windows Connect Now</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="WdiServiceHost"></td><td>WdiServiceHost</td><td>Diagnostic Service Host</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="WdiSystemHost"></td><td>WdiSystemHost</td><td>Diagnostic System Host</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="WebClient"></td><td>WebClient</td><td>WebClient</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="Wecsvc"></td><td>Wecsvc</td><td>Windows Event Collector</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="WEPHOSTSVC"></td><td>WEPHOSTSVC</td><td>Windows Encryption Provider Host</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="wercplsupport"></td><td>wercplsupport</td><td>Problem Reports Control Panel</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="WerSvc"></td><td>WerSvc</td><td>Windows Error Reporting</td><td>recommended</td></tr>
+<tr><td><input type="checkbox" class="svc" value="WFDSConMgrSvc"></td><td>WFDSConMgrSvc</td><td>Wi-Fi Direct Services Connection Manager</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="WiaRpc"></td><td>WiaRpc</td><td>Still Image Acquisition Events</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="WinRM"></td><td>WinRM</td><td>Windows Remote Management</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="wisvc"></td><td>wisvc</td><td>Windows Insider Service</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="wlidsvc"></td><td>wlidsvc</td><td>Microsoft Account Sign-in Assistant</td><td>breaks MS account</td></tr>
+<tr><td><input type="checkbox" class="svc" value="WManSvc"></td><td>WManSvc</td><td>Windows Management Service</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="wmiApSrv"></td><td>wmiApSrv</td><td>WMI Performance Adapter</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="WMPNetworkSvc"></td><td>WMPNetworkSvc</td><td>Windows Media Player Network Sharing</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="workfolderssvc"></td><td>workfolderssvc</td><td>Work Folders</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="WpcMonSvc"></td><td>WpcMonSvc</td><td>Parental Controls</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="WPDBusEnum"></td><td>WPDBusEnum</td><td>Portable Device Enumerator</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="WpnService"></td><td>WpnService</td><td>Windows Push Notifications System</td><td>breaks notifications</td></tr>
+<tr><td><input type="checkbox" class="svc" value="WpnUserService"></td><td>WpnUserService</td><td>Windows Push Notifications User</td><td>breaks notifications</td></tr>
+<tr><td><input type="checkbox" class="svc" value="wscsvc"></td><td>wscsvc</td><td>Security Center</td><td>recommended</td></tr>
+<tr><td><input type="checkbox" class="svc" value="WSearch"></td><td>WSearch</td><td>Windows Search</td><td>breaks search</td></tr>
+<tr><td><input type="checkbox" class="svc" value="wuauserv"></td><td>wuauserv</td><td>Windows Update</td><td>recommended</td></tr>
+<tr><td><input type="checkbox" class="svc" value="WVPC"></td><td>WVPC</td><td>Windows Virtual PC</td><td>safe</td></tr>
+<tr><td><input type="checkbox" class="svc" value="XblAuthManager"></td><td>XblAuthManager</td><td>Xbox Live Auth Manager</td><td>breaks xbox</td></tr>
+<tr><td><input type="checkbox" class="svc" value="XblGameSave"></td><td>XblGameSave</td><td>Xbox Live Game Save</td><td>breaks xbox</td></tr>
+<tr><td><input type="checkbox" class="svc" value="XboxGipSvc"></td><td>XboxGipSvc</td><td>Xbox Accessory Management</td><td>breaks xbox controllers</td></tr>
+<tr><td><input type="checkbox" class="svc" value="XboxNetApiSvc"></td><td>XboxNetApiSvc</td><td>Xbox Live Networking</td><td>breaks xbox</td></tr>
+</table>
+
+<p><b>warning:</b> this is aggressive. only selected services will be written to the .reg file. to restore, set the services back to their original start values or use system restore.</p>
+
+<hr>
+</div>
+
+<center>
+<p>
+<font size="2">
+acrhboy - Powered by NeptriYon Technologies.
+</font>
+</p>
+</center>
+
+<script>
+function toggle(id) {
+    var el = document.getElementById(id);
+    if (el.style.display === "none" || el.style.display === "") {
+        el.style.display = "block";
+    } else {
+        el.style.display = "none";
+    }
+}
+
+function selectAll(state) {
+    var boxes = document.getElementsByClassName("svc");
+    for (var i = 0; i < boxes.length; i++) {
+        boxes[i].checked = state;
+    }
+}
+
+function generateReg() {
+    var regContent = [
+        "Windows Registry Editor Version 5.00",
+        "",
+        "; ============================================",
+        "; acrhboy - aggressive disable windows update",
+        "; + mark as managed by organization",
+        "; ============================================",
+        "",
+        "; --- disable windows update core ---",
+        "[HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\WindowsUpdate\\AU]",
+        "\"NoAutoUpdate\"=dword:00000001",
+        "\"AUOptions\"=dword:00000001",
+        "\"NoAutoRebootWithLoggedOnUsers\"=dword:00000001",
+        "\"AutoInstallMinorUpdates\"=dword:00000000",
+        "\"DetectionFrequencyEnabled\"=dword:00000001",
+        "\"DetectionFrequency\"=dword:00000001",
+        "",
+        "; --- block access to windows update servers ---",
+        "[HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\WindowsUpdate]",
+        "\"WUServer\"=\" \"",
+        "\"WUStatusServer\"=\" \"",
+        "\"DoNotConnectToWindowsUpdateInternetLocations\"=dword:00000001",
+        "\"UpdateServiceUrlAlternate\"=\" \"",
+        "\"SetDisableUXWUAccess\"=dword:00000001",
+        "\"DisableWindowsUpdateAccess\"=dword:00000001",
+        "\"ElevateNonAdmins\"=dword:00000000",
+        "",
+        "; --- disable auto update service behaviour ---",
+        "[HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\WindowsUpdate\\Auto Update]",
+        "\"AUOptions\"=dword:00000001",
+        "\"NoAutoUpdate\"=dword:00000001",
+        "\"DisableWindowsUpdateAccess\"=dword:00000001",
+        "",
+        "; --- managed by organization banner + policy driven updates ---",
+        "[HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System]",
+        "\"EnableLUA\"=dword:00000001",
+        "\"ConsentPromptBehaviorAdmin\"=dword:00000005",
+        "\"PromptOnSecureDesktop\"=dword:00000001",
+        "\"FilterAdministratorToken\"=dword:00000001",
+        "\"EnableUIADesktopToggle\"=dword:00000000",
+        "\"ValidateAdminCodeSignatures\"=dword:00000000",
+        "",
+        "[HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\WindowsUpdate]",
+        "\"DisableWindowsUpdateAccess\"=dword:00000001",
+        "",
+        "[HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\WindowsUpdate]",
+        "\"SetPolicyDrivenUpdateSourceForFeatureUpdates\"=dword:00000001",
+        "\"SetPolicyDrivenUpdateSourceForQualityUpdates\"=dword:00000001",
+        "\"SetPolicyDrivenUpdateSourceForDriverUpdates\"=dword:00000001",
+        "\"SetPolicyDrivenUpdateSourceForOtherUpdates\"=dword:00000001",
+        "\"UpdateMode\"=dword:00000000",
+        "\"DeferFeatureUpdates\"=dword:00000001",
+        "\"DeferFeatureUpdatesPeriodInDays\"=dword:00000168",
+        "\"DeferQualityUpdates\"=dword:00000001",
+        "\"DeferQualityUpdatesPeriodInDays\"=dword:0000001e",
+        "\"BranchReadinessLevel\"=dword:00000014",
+        "\"ExcludeWUDriversInQualityUpdate\"=dword:00000001",
+        "",
+        "; --- disable update orchestration / medic service ---",
+        "[HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\UsoSvc]",
+        "\"Start\"=dword:00000004",
+        "",
+        "[HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\wuauserv]",
+        "\"Start\"=dword:00000004",
+        "",
+        "[HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\WaaSMedicSvc]",
+        "\"Start\"=dword:00000004",
+        "",
+        "; --- disable windows update scheduled tasks (via policy) ---",
+        "[HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\WindowsUpdate\\AU]",
+        "\"ScheduledInstallDay\"=dword:00000000",
+        "\"ScheduledInstallTime\"=dword:00000000",
+        ""
+    ].join("\r\n");
+
+    var blob = new Blob([regContent], { type: "application/octet-stream" });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement("a");
+    a.href = url;
+    a.download = "acrhboy.reg";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+}
+
+function generateServicesReg() {
+    var boxes = document.getElementsByClassName("svc");
+    var selected = [];
+    for (var i = 0; i < boxes.length; i++) {
+        if (boxes[i].checked) {
+            selected.push(boxes[i].value);
+        }
+    }
+
+    if (selected.length === 0) {
+        alert("no services selected. tick at least one service.");
+        return;
+    }
+
+    var lines = [
+        "Windows Registry Editor Version 5.00",
+        "",
+        "; ============================================",
+        "; acrhboy - custom services to disable",
+        "; selected services set to disabled (Start=4)",
+        "; ============================================",
+        ""
+    ];
+
+    for (var i = 0; i < selected.length; i++) {
+        lines.push("[HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\" + selected[i] + "]");
+        lines.push("\"Start\"=dword:00000004");
+        lines.push("");
+    }
+
+    var regContent = lines.join("\r\n");
+
+    var blob = new Blob([regContent], { type: "application/octet-stream" });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement("a");
+    a.href = url;
+    a.download = "acrhboy-services.reg";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+}
+</script>
+
+</body>
+</html>
